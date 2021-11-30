@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeeed7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  width: 325px;
+  height: 435px;
+  padding: 14px 8px;
+  margin-top: 100px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.display {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  text-decoration: none;
+  background-color: #9fc7d3;
+  font-family: sans-serif;
+  font-size: 50px;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+button:active {
+  background-color: #82a3ad;
+}
+
+#clear {
+  background-color: #c5524e;
+}
+
+#clear:active {
+  background-color: #a1423f;
+}
+
+#equals,
+.operator {
+  background-color: #e9b50d;
+}
+
+#equals:active,
+.operator:active {
+  background-color: #bd9309;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  margin: 0px 8px;
+  font-family: sans-serif;
+  font-size: 60px;
+}
