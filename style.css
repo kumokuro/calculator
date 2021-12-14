@@ -20,11 +20,14 @@ body {
 .display {
   background-color: #ffffff;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
   padding: 20px 0px;
   margin-bottom: 10px;
   border-radius: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 button {
