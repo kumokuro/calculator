@@ -24,39 +24,23 @@ function operate(operator, num1, num2) {
   return operator(num1, num2);
 }
 
-let num1 = null;
-let num2 = null;
-let clickedNum = 0;
-let checkForSecondNum = false;
+class Calculator {
+  constructor(lastOperand, currentOperand) {
+    this.lastOperand = lastOperand;
+    this.currentOperand = currentOperand;
+  }
 
-// stores clicked number and displays to screen
-function getClickedNum() {
-  let numbers = document.querySelectorAll(".number");
-  numbers.forEach((number) => {
-    number.addEventListener("click", () => {
-      clickedNum = number.textContent;
-      resultDisplay.textContent = clickedNum;
-      getResult();
-    });
-  });
-}
-getClickedNum();
+  clear() {}
 
-function getResult() {
-  if (num1 === null) {
-    num1 = parseInt(clickedNum);
-  }
-  if (num1 !== null) {
-    checkForSecondNum = true;
-  }
-  if (checkForSecondNum === true) {
-    num2 = parseInt(clickedNum);
-  }
-  if (num2 !== null) {
-    result = operate(add, num1, num2);
-    console.log(`${num1} + ${num2} = ${result}`);
-  }
-  //console.log(`num1: ${num1} num2: ${num2}`);
+  delete() {}
+
+  appendNumber(number) {}
+
+  chooseOperation(operation) {}
+
+  compute() {}
+
+  updateDisplay() {}
 }
 
 let result = 0;

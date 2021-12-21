@@ -9,33 +9,34 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div class="calculator">
       <div class="display">
-        <p id="result"></p>
+        <div class="last-operand"></div>
+        <div class="current-operand"></div>
       </div>
-      <div class="row">
-        <button type="button" class="number">7</button>
-        <button type="button" class="number">8</button>
-        <button type="button" class="number">9</button>
-        <button type="button" class="operator">÷</button>
-      </div>
-      <div class="row">
-        <button type="button" class="number">4</button>
-        <button type="button" class="number">5</button>
-        <button type="button" class="number">6</button>
-        <button type="button" class="operator">x</button>
-      </div>
-      <div class="row">
-        <button type="button" class="number">1</button>
-        <button type="button" class="number">2</button>
-        <button type="button" class="number">3</button>
-        <button type="button" class="operator">-</button>
-      </div>
-      <div class="row">
-        <button type="button" class="number">0</button>
-        <button type="button" id="clear">C</button>
-        <button type="button" id="equals">=</button>
-        <button type="button" class="operator">+</button>
+
+      <div class="keys">
+        <button type="button" data-operation>+</button>
+        <button type="button" data-operation>-</button>
+        <button type="button" data-operation>x</button>
+        <button type="button" data-operation>÷</button>
+
+        <button type="button" data-number>7</button>
+        <button type="button" data-number>8</button>
+        <button type="button" data-number>9</button>
+
+        <button type="button" data-number>4</button>
+        <button type="button" data-number>5</button>
+        <button type="button" data-number>6</button>
+
+        <button type="button" data-number>1</button>
+        <button type="button" data-number>2</button>
+        <button type="button" data-number>3</button>
+
+        <button type="button" data-number>0</button>
+        <button type="button" data-number>.</button>
+        <button type="button" data-clear class="clear">C</button>
+        <button type="button" data-equals class="equals">=</button>
       </div>
     </div>
   </body>
