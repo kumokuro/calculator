@@ -32,7 +32,9 @@ body {
   justify-content: flex-end;
   width: 90%;
   font-family: Helvetica, sans-serif;
-  font-size: 5rem;
+  font-size: 4.5rem;
+  word-wrap: break-word;
+  word-break: break-all;
   height: 100px;
   border: none;
   background-color: #464545;
@@ -68,12 +70,12 @@ button:hover {
   background-color: #e7e7e7;
 }
 
-[data-operation] {
+[data-operator] {
   background-color: #e69d16;
   color: #fff;
 }
 
-[data-operation]:hover {
+[data-operator]:hover {
   background-color: #e69d16c2;
 }
 
