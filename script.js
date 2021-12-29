@@ -100,24 +100,3 @@ clearButton.addEventListener("click", (button) => {
 function round(value, decimals) {
   return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 }
-
-/* 
-Whatever numbers get pressed before the operand needs to be assigned to lastOperand. 
-
-Append number to currentNum
-Append number to currentNum 
-+
-if operator is clicked, last Operand = currentNum 
-clear currentNum 
-
-------------
-
-If I string together a series of operations, they should calculate.
-
-5 + 9 
-
-When I click the next operator, it should calculate and update display of 5+9.
-
-+ 7 
-
-*/
