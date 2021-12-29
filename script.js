@@ -1,29 +1,3 @@
-// creating the operators
-function add(num1, num2) {
-  const sum = num1 + num2;
-  return sum;
-}
-
-function subtract(num1, num2) {
-  const difference = num1 - num2;
-  return difference;
-}
-
-function multiply(num1, num2) {
-  const product = num1 * num2;
-  return product;
-}
-
-function divide(num1, num2) {
-  const quotient = num1 / num2;
-  return quotient;
-}
-
-// calls the operators
-function operate(operator, num1, num2) {
-  return operator(num1, num2);
-}
-
 const numberButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator]");
 const equalsButton = document.querySelector("[data-equals]");
@@ -72,7 +46,7 @@ class Calculator {
       case "-":
         result = lastNum - currentNum;
         break;
-      case "*":
+      case "x":
         result = lastNum * currentNum;
         break;
       case "÷":
@@ -81,13 +55,19 @@ class Calculator {
       default:
         return;
     }
-    this.currentOperand = result;
+    this.currentOperand = round(result, 6);
     this.operator = undefined;
-    this.lastOperand;
+    this.lastOperand = "";
   }
 
   updateDisplay() {
-    this.currentOperandText.innerText = this.currentOperand;
+    if (this.operator === undefined) {
+      this.currentOperandText.innerText = this.currentOperand;
+    } else if (this.operator !== undefined && this.currentOperand !== "") {
+      this.currentOperandText.innerText = this.currentOperand;
+    } else {
+      this.currentOperandText.innerText = this.lastOperand;
+    }
   }
 }
 
@@ -107,6 +87,20 @@ operatorButtons.forEach((button) => {
   });
 });
 
+equalsButton.addEventListener("click", (button) => {
+  calculator.calculate();
+  calculator.updateDisplay();
+});
+
+clearButton.addEventListener("click", (button) => {
+  calculator.clear();
+  calculator.updateDisplay();
+});
+
+function round(value, decimals) {
+  return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
+}
+
 /* 
 Whatever numbers get pressed before the operand needs to be assigned to lastOperand. 
 
@@ -116,5 +110,14 @@ Append number to currentNum
 if operator is clicked, last Operand = currentNum 
 clear currentNum 
 
+------------
+
+If I string together a series of operations, they should calculate.
+
+5 + 9 
+
+When I click the next operator, it should calculate and update display of 5+9.
+
++ 7 
 
 */
